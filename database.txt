@@ -1,0 +1,17 @@
+select ifnull(select salary from employee order by salary desc limit (1,1),null) as  secondhighestsalary
+
+select max(e.salary)  as secondhighestsalary from employee e where e.salary!=(select max(salary) from employee);
+
+select ifnull((select distinct salary from employee order by salary desc limit 1 offset n-1),null) as nth_highestsalary;
+
+select score,(select count(distinct score) from scores where score>=s.score from rank scores as s)
+
+select distinct l1.nums as coonsecutivenums from logs l1,logs l2,logs l3 where l1.ID=l2.ID-1 and 
+l2.ID= l3.ID-1 and
+l1.nums= l2.nums and 
+l2.nums=l3.nums
+
+
+
+
+
